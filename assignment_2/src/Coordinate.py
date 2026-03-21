@@ -59,6 +59,13 @@ class Coordinate:
     """
     def __eq__(self, other):
         return self.x == other.x and self.y == other.y
+    
+    """
+    Hashed representation of coordinate for set usage
+    @return the hashed representation of the coordinate
+    """
+    def __hash__(self):
+        return hash((self.get_x(), self.get_y()))
 
     """
     Check whether a point lies between a x range with [low,up)
@@ -106,3 +113,4 @@ class Coordinate:
         map[Direction.north] = Coordinate(0, -1)
         map[Direction.south] = Coordinate(0, 1)
         return map[dir]
+    

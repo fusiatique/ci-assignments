@@ -14,7 +14,7 @@ class SurroundingPheromone:
     def __init__(self, north, east, south, west):
         self.north = north
         self.south = south
-        self.west = west
+        self.west = west  
         self.east = east
         self.total_surrounding_pheromone = east + north + south + west
 
@@ -41,3 +41,20 @@ class SurroundingPheromone:
             return self.south
         else:
             return None
+        
+    """
+    Add an amount of pheromone to a given direction
+    @param dir: the direction of interest
+    @param amt: the amount of pheromone to add
+    """
+    def add(self, dir, amt):
+        if dir == Direction.north:
+            self.north += amt
+        elif dir == Direction.east:
+            self.east += amt
+        elif dir == Direction.west:
+            self.west += amt
+        elif dir == Direction.south:
+            self.south += amt
+        else:
+            return
