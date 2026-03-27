@@ -59,6 +59,7 @@ class Coordinate:
     """
     def __eq__(self, other):
         return self.x == other.x and self.y == other.y
+    
 
     """
     Check whether a point lies between a x range with [low,up)
@@ -106,3 +107,4 @@ class Coordinate:
         map[Direction.north] = Coordinate(0, -1)
         map[Direction.south] = Coordinate(0, 1)
         return map[dir]
+    
